@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeloWorldSystem.Models", "VeloWorldSystem.Models\VeloWorldSystem.Models.csproj", "{2D27EE55-92FA-44FC-87C1-5E17928D27EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Models", "VeloWorldSystem.Models\VeloWorldSystem.Models.csproj", "{2D27EE55-92FA-44FC-87C1-5E17928D27EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeloWorldSystem.Web", "VeloWorldSystem.Web\VeloWorldSystem.Web.csproj", "{313DC0F3-60D7-4A88-A911-3473165B1885}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeloWorldSystem.Data", "VeloWorldSystem.Data\VeloWorldSystem.Data.csproj", "{F7CA85E3-46E1-4D77-B383-6324363AC0F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeloWorldSystem.Web.ViewModels", "VeloWorldSystem.Web.ViewModels\VeloWorldSystem.Web.ViewModels.csproj", "{7EF415CF-5A14-44CB-9AFD-51AE8DADC300}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{2D27EE55-92FA-44FC-87C1-5E17928D27EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D27EE55-92FA-44FC-87C1-5E17928D27EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D27EE55-92FA-44FC-87C1-5E17928D27EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{313DC0F3-60D7-4A88-A911-3473165B1885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{313DC0F3-60D7-4A88-A911-3473165B1885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{313DC0F3-60D7-4A88-A911-3473165B1885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{313DC0F3-60D7-4A88-A911-3473165B1885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7CA85E3-46E1-4D77-B383-6324363AC0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7CA85E3-46E1-4D77-B383-6324363AC0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7CA85E3-46E1-4D77-B383-6324363AC0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7CA85E3-46E1-4D77-B383-6324363AC0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF415CF-5A14-44CB-9AFD-51AE8DADC300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF415CF-5A14-44CB-9AFD-51AE8DADC300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF415CF-5A14-44CB-9AFD-51AE8DADC300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF415CF-5A14-44CB-9AFD-51AE8DADC300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
