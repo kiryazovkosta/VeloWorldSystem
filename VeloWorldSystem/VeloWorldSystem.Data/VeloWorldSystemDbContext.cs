@@ -2,7 +2,8 @@
 {
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
-    using VeloWorldSystem.Models;
+    using VeloWorldSystem.Models.Entities.Identity;
+    using VeloWorldSystem.Models.Entities.Models;
 
     /// <summary>
     /// VeloWorldSystemDbContext.
@@ -17,5 +18,10 @@
             : base(options)
         {
         }
+
+        /// <summary>
+        /// Gets or sets activities.
+        /// </summary>
+        public DbSet<Activity> Activities { get; set; } = null!;
     }
 }

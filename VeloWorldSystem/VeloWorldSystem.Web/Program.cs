@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using VeloWorldSystem.Data;
-using VeloWorldSystem.Models;
+using VeloWorldSystem.Models.Entities.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
