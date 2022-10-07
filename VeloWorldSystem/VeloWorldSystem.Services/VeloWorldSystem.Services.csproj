@@ -1,9 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VeloWorldSystem.Common\VeloWorldSystem.Common.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Data\VeloWorldSystem.Data.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Mapping\VeloWorldSystem.Mapping.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Services.Models\VeloWorldSystem.Services.Models.csproj" />
+  </ItemGroup>
 
 </Project>

@@ -1,6 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using VeloWorldSystem.Data;
+using VeloWorldSystem.Mapping;
 using VeloWorldSystem.Models.Entities.Identity;
+using VeloWorldSystem.Services;
+using VeloWorldSystem.Services.Contracts;
+using VeloWorldSystem.Services.Models;
+using VeloWorldSystem.Web.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +22,14 @@ builder.Services
     .AddEntityFrameworkStores<VeloWorldSystemDbContext>();
 builder.Services.AddControllersWithViews();
 
+// Application services
+builder.Services.AddScoped<IDemoService, DemoService>();
+
 var app = builder.Build();
+
+AutoMapperConfig.RegisterMappings(
+    typeof(ErrorViewModel).GetTypeInfo().Assembly,
+    typeof(DemoDto).GetTypeInfo().Assembly);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

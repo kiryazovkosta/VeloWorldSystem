@@ -1,4 +1,4 @@
-namespace VeloWorldSystem.Web.ViewModels
+namespace VeloWorldSystem.Web.Models
 {
     /// <summary>
     /// Error view model.

@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Constants\" />
-    <Folder Include="Enumerations\" />
+    <ProjectReference Include="..\VeloWorldSystem.Mapping\VeloWorldSystem.Mapping.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Services.Models\VeloWorldSystem.Services.Models.csproj" />
   </ItemGroup>
 
 </Project>

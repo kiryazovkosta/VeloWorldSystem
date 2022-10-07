@@ -16,14 +16,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\VeloWorldSystem.Data\VeloWorldSystem.Data.csproj" />
     <ProjectReference Include="..\VeloWorldSystem.Models\VeloWorldSystem.Models.csproj" />
-    <ProjectReference Include="..\VeloWorldSystem.Web.ViewModels\VeloWorldSystem.Web.ViewModels.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Services\VeloWorldSystem.Services.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Web.ViewModels\VeloWorldSystem.Web.Models.csproj" />
   </ItemGroup>
 
 </Project>

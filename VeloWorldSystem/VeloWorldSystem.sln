@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Web", "Velo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Data", "VeloWorldSystem.Data\VeloWorldSystem.Data.csproj", "{F7CA85E3-46E1-4D77-B383-6324363AC0F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Web.ViewModels", "VeloWorldSystem.Web.ViewModels\VeloWorldSystem.Web.ViewModels.csproj", "{7EF415CF-5A14-44CB-9AFD-51AE8DADC300}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Web.Models", "VeloWorldSystem.Web.ViewModels\VeloWorldSystem.Web.Models.csproj", "{7EF415CF-5A14-44CB-9AFD-51AE8DADC300}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Services", "VeloWorldSystem.Services\VeloWorldSystem.Services.csproj", "{695C8689-976C-4B80-8ACE-0A04C9D554A7}"
 EndProject
@@ -29,6 +29,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9D44CDA9-532D-4F6A-A7BA-B84FDCAF6552}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Mapping", "VeloWorldSystem.Mapping\VeloWorldSystem.Mapping.csproj", "{8EA20E92-D667-4B59-B97D-595A01D6771A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Services.Models", "VeloWorldSystem.Services.Models\VeloWorldSystem.Services.Models.csproj", "{271B2750-BF1D-4B93-A0E2-5BE77B08F03E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +66,10 @@ Global
 		{8EA20E92-D667-4B59-B97D-595A01D6771A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EA20E92-D667-4B59-B97D-595A01D6771A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EA20E92-D667-4B59-B97D-595A01D6771A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{271B2750-BF1D-4B93-A0E2-5BE77B08F03E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{271B2750-BF1D-4B93-A0E2-5BE77B08F03E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{271B2750-BF1D-4B93-A0E2-5BE77B08F03E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{271B2750-BF1D-4B93-A0E2-5BE77B08F03E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{695C8689-976C-4B80-8ACE-0A04C9D554A7} = {9D44CDA9-532D-4F6A-A7BA-B84FDCAF6552}
 		{8F6855CF-4068-40D6-BA5D-D64723DAB401} = {4D17770E-295C-442A-BE20-62001114600C}
 		{8EA20E92-D667-4B59-B97D-595A01D6771A} = {9D44CDA9-532D-4F6A-A7BA-B84FDCAF6552}
+		{271B2750-BF1D-4B93-A0E2-5BE77B08F03E} = {9D44CDA9-532D-4F6A-A7BA-B84FDCAF6552}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89DB1A6D-F1C6-467D-B9BF-71675C538561}

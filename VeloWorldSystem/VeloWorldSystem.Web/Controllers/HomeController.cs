@@ -2,7 +2,7 @@
 {
     using System.Diagnostics;
     using Microsoft.AspNetCore.Mvc;
-    using VeloWorldSystem.Web.ViewModels;
+    using VeloWorldSystem.Web.Models;
 
     /// <summary>
     /// HomeController.
