@@ -87,7 +87,8 @@
                              where typeof(IHaveCustomMappings).GetTypeInfo().IsAssignableFrom(t) &&
                                    !t.GetTypeInfo().IsAbstract &&
                                    !t.GetTypeInfo().IsInterface
-                             select (IHaveCustomMappings)Activator.CreateInstance(t);
+                             select Activator.CreateInstance(t) as IHaveCustomMappings;
+                             // select(IHaveCustomMappings)Activator.CreateInstance(t);
 
             return customMaps;
         }

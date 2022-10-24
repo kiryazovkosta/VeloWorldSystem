@@ -4,26 +4,21 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-VeloWorldSystem.Web-C3A4D43A-7F88-4684-85B1-4A087E03B0BC</UserSecretsId>
+    <UserSecretsId>aspnet-VeloWorldSystem.Web-24762D81-F7CF-407A-B311-DF3EF43C60A1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\lib\" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\VeloWorldSystem.Data\VeloWorldSystem.Data.csproj" />
     <ProjectReference Include="..\VeloWorldSystem.Models\VeloWorldSystem.Models.csproj" />
-    <ProjectReference Include="..\VeloWorldSystem.Services\VeloWorldSystem.Services.csproj" />
-    <ProjectReference Include="..\VeloWorldSystem.Web.ViewModels\VeloWorldSystem.Web.Models.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Web.ViewModels\VeloWorldSystem.DtoModels.csproj" />
   </ItemGroup>
 
 </Project>

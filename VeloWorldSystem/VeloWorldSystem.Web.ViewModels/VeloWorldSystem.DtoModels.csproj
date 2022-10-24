@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VeloWorldSystem.Mapping\VeloWorldSystem.Mapping.csproj" />
-    <ProjectReference Include="..\VeloWorldSystem.Services.Models\VeloWorldSystem.Services.Models.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Models\VeloWorldSystem.Models.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,5 @@
-﻿@using VeloWorldSystem.Models.Entities.Identity
-@using Microsoft.AspNetCore.Identity
-
+﻿@using Microsoft.AspNetCore.Identity
+@using VeloWorldSystem.Models.Entities.Identity
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 
@@ -19,7 +18,7 @@
 else
 {
     <li class="nav-item">
-            <a class="btn btn-primary" asp-area="Identity" asp-page="/Account/Register"><i class="bi bi-hand-thumbs-up"></i>Register</a>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>

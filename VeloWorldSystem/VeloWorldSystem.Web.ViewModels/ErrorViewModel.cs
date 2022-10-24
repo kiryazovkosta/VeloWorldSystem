@@ -1,4 +1,4 @@
-namespace VeloWorldSystem.Web.Models
+namespace VeloWorldSystem.DtoModels
 {
     /// <summary>
     /// Error view model.
@@ -13,6 +13,6 @@ namespace VeloWorldSystem.Web.Models
         /// <summary>
         /// Gets a value indicating whether gets a ShowRequestId.
         /// </summary>
-        public bool ShowRequestId => !string.IsNullOrEmpty(this.RequestId);
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }

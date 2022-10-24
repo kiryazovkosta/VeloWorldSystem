@@ -10,7 +10,7 @@
     <ProjectReference Include="..\VeloWorldSystem.Common\VeloWorldSystem.Common.csproj" />
     <ProjectReference Include="..\VeloWorldSystem.Data\VeloWorldSystem.Data.csproj" />
     <ProjectReference Include="..\VeloWorldSystem.Mapping\VeloWorldSystem.Mapping.csproj" />
-    <ProjectReference Include="..\VeloWorldSystem.Services.Models\VeloWorldSystem.Services.Models.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Web.ViewModels\VeloWorldSystem.DtoModels.csproj" />
   </ItemGroup>
 
 </Project>

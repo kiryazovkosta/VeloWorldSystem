@@ -1,11 +1,11 @@
 ﻿namespace VeloWorldSystem.Services.Contracts
 {
-    using VeloWorldSystem.Services.Models;
+    using VeloWorldSystem.DtoModels.Demo;
 
     public interface IDemoService
     {
-        public Task<IEnumerable<DemoDto>> GetAll();
+        public Task<IEnumerable<DemoViewModel>> GetAll();
 
-        public Task<DemoDto> GetById(int id);
+        public Task<DemoViewModel> GetById(int id);
     }
 }
