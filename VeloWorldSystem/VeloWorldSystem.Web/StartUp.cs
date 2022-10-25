@@ -1,19 +1,20 @@
 using Microsoft.EntityFrameworkCore;
 using VeloWorldSystem.Data;
+using VeloWorldSystem.Data.Settings;
 using VeloWorldSystem.Models.Entities.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("VeloWorldSystemConnection");
-builder.Services.AddDbContext<VeloWorldSystemDbContext>(options =>
-    options.UseSqlServer(connectionString));
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services
+    .AddDbContext<VeloWorldSystemDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services
+    .AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
-{
-    options.SignIn.RequireConfirmedAccount = true;
-}).AddEntityFrameworkStores<VeloWorldSystemDbContext>();
+builder.Services
+    .AddDefaultIdentity<ApplicationUser>(IdentityOptionsProvider.GetIdentityOptions)
+    .AddEntityFrameworkStores<VeloWorldSystemDbContext>();
 
 builder.Services.AddControllersWithViews();
 

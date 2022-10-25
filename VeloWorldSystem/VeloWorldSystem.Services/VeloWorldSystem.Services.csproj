@@ -13,4 +13,8 @@
     <ProjectReference Include="..\VeloWorldSystem.Web.ViewModels\VeloWorldSystem.DtoModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+  </ItemGroup>
+
 </Project>
