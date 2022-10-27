@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VeloWorldSystem.Data;
 
@@ -11,9 +12,10 @@ using VeloWorldSystem.Data;
 namespace VeloWorldSystem.Data.Migrations
 {
     [DbContext(typeof(VeloWorldSystemDbContext))]
-    partial class VeloWorldSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221027115139_RelationCommentActivity")]
+    partial class RelationCommentActivity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

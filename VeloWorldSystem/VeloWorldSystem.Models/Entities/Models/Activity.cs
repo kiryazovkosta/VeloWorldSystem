@@ -41,5 +41,12 @@
 
         public ICollection<Waypoint> Waypoints { get; set; }
             = new HashSet<Waypoint>();
+
+        public ICollection<ActivityLike> Likes { get; set; }
+            = new HashSet<ActivityLike>();
+
+        public ICollection<Comment> Comments { get; set; }
+            = new HashSet<Comment>();
+
     }
 }

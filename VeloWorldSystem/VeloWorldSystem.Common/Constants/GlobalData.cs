@@ -42,5 +42,11 @@ namespace VeloWorldSystem.Common.Constants
             public const int ActivityMaxPrivateNotesLength = 255;
             public const int ActivityMinPrivateNotesLength = 10;
         }
+
+        public class Comment
+        {
+            public const int CommentMaxContentLength = 255;
+            public const int CommentMinContentLength = 5;
+        }
     }
 }

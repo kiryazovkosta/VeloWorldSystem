@@ -9,22 +9,17 @@
     using System.Threading.Tasks;
     using VeloWorldSystem.Models.Abstract;
     using VeloWorldSystem.Models.Entities.Identity;
-    using static VeloWorldSystem.Common.Constants.GlobalData.Comment;
 
-    public class Comment : BaseDeletableEntity<int>
+    public class ActivityLike : BaseAuditEntity
     {
         [Required]
-        [MaxLength(CommentMaxContentLength)]
-        public string Content { get; set; } = null!;
+        [ForeignKey(nameof(Activity))]
+        public int ActivityId { get; set; }
+        public Activity Activity { get; set; } = null!;
 
         [Required]
         [ForeignKey(nameof(ApplicationUser))]
         public string UserId { get; set; } = null!;
         public ApplicationUser User { get; set; } = null!;
-
-        [Required]
-        [ForeignKey(nameof(Activity))]
-        public int ActivityId { get; set; }
-        public Activity Activity { get; set; } = null!;
     }
 }

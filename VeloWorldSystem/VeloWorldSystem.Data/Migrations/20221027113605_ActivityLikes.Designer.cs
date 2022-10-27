@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VeloWorldSystem.Data;
 
@@ -11,9 +12,10 @@ using VeloWorldSystem.Data;
 namespace VeloWorldSystem.Data.Migrations
 {
     [DbContext(typeof(VeloWorldSystemDbContext))]
-    partial class VeloWorldSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221027113605_ActivityLikes")]
+    partial class ActivityLikes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -296,6 +298,9 @@ namespace VeloWorldSystem.Data.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("ModifiedAt")
                         .HasColumnType("datetime2");
 
@@ -303,7 +308,7 @@ namespace VeloWorldSystem.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ActivityLikes");
+                    b.ToTable("ActivityLike");
                 });
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Bike", b =>
@@ -406,9 +411,6 @@ namespace VeloWorldSystem.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("ActivityId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -431,8 +433,6 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ActivityId");
 
                     b.HasIndex("IsDeleted");
 
@@ -475,7 +475,7 @@ namespace VeloWorldSystem.Data.Migrations
 
                     b.HasKey("ActivityId", "OrderNumber");
 
-                    b.ToTable("Waypoints");
+                    b.ToTable("Waypoint");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -588,19 +588,11 @@ namespace VeloWorldSystem.Data.Migrations
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Comment", b =>
                 {
-                    b.HasOne("VeloWorldSystem.Models.Entities.Models.Activity", "Activity")
-                        .WithMany("Comments")
-                        .HasForeignKey("ActivityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("VeloWorldSystem.Models.Entities.Identity.ApplicationUser", "User")
                         .WithMany("Comments")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("Activity");
 
                     b.Navigation("User");
                 });
@@ -633,8 +625,6 @@ namespace VeloWorldSystem.Data.Migrations
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Activity", b =>
                 {
-                    b.Navigation("Comments");
-
                     b.Navigation("Likes");
 
                     b.Navigation("Waypoints");

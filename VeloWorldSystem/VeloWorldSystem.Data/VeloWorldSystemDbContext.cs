@@ -19,6 +19,12 @@
 
         public DbSet<Activity> Activities { get; set; } = null!;
 
+        public DbSet<Comment> Comments { get; set; } = null!;
+
+        public DbSet<Waypoint> Waypoints { get; set; } = null!;
+
+        public DbSet<ActivityLike> ActivityLikes { get; set; } = null!;
+
         public override int SaveChanges() 
             => this.SaveChanges(true);
 
