@@ -3,8 +3,9 @@
     using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using VeloWorldSystem.Models.Abstract;
 
-    public class Waypoint
+    public class Waypoint : BaseDeletableEntity<int>
     {
         [Required]
         [ForeignKey(nameof(Activity))]

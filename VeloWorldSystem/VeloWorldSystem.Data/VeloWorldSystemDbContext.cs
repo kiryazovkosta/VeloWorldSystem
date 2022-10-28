@@ -25,6 +25,8 @@
 
         public DbSet<ActivityLike> ActivityLikes { get; set; } = null!;
 
+        public DbSet<Image> Images { get; set; } = null!;
+
         public override int SaveChanges() 
             => this.SaveChanges(true);
 

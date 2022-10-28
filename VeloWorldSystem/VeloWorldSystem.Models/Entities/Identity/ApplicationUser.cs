@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using Microsoft.AspNetCore.Identity;
     using VeloWorldSystem.Models.Entities.Models;
 
@@ -14,6 +16,11 @@
             //Claims 
             //Logins 
         }
+
+        [Required]
+        [ForeignKey(nameof(Image))]
+        public int ImageId { get; set; }
+        public Image Image { get; set; }
 
         public ICollection<Activity> Activities { get; set; } = new HashSet<Activity>();
 

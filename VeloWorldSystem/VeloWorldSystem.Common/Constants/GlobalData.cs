@@ -48,5 +48,10 @@ namespace VeloWorldSystem.Common.Constants
             public const int CommentMaxContentLength = 255;
             public const int CommentMinContentLength = 5;
         }
+
+        public class Image
+        {
+            public const int ImageMaxUrlLength = 2048;
+        }
     }
 }

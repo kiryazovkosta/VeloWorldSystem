@@ -178,6 +178,9 @@ namespace VeloWorldSystem.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<int>("ImageId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -212,6 +215,9 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ImageId")
+                        .IsUnique();
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -441,6 +447,46 @@ namespace VeloWorldSystem.Data.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Image", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("ActivityId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasMaxLength(2048)
+                        .HasColumnType("nvarchar(2048)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActivityId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Waypoint", b =>
                 {
                     b.Property<int>("ActivityId")
@@ -449,11 +495,23 @@ namespace VeloWorldSystem.Data.Migrations
                     b.Property<int>("OrderNumber")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("Elevation")
                         .HasColumnType("int");
 
                     b.Property<int?>("HeartRate")
                         .HasColumnType("int");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
 
                     b.Property<decimal>("Latitude")
                         .HasPrecision(12, 9)
@@ -462,6 +520,9 @@ namespace VeloWorldSystem.Data.Migrations
                     b.Property<decimal>("Longitude")
                         .HasPrecision(12, 9)
                         .HasColumnType("decimal(12,9)");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
 
                     b.Property<decimal>("Speed")
                         .HasPrecision(5, 3)
@@ -474,6 +535,8 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("ActivityId", "OrderNumber");
+
+                    b.HasIndex("IsDeleted");
 
                     b.ToTable("Waypoints");
                 });
@@ -527,6 +590,17 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Identity.ApplicationUser", b =>
+                {
+                    b.HasOne("VeloWorldSystem.Models.Entities.Models.Image", "Image")
+                        .WithOne("User")
+                        .HasForeignKey("VeloWorldSystem.Models.Entities.Identity.ApplicationUser", "ImageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Activity", b =>
@@ -605,6 +679,15 @@ namespace VeloWorldSystem.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Image", b =>
+                {
+                    b.HasOne("VeloWorldSystem.Models.Entities.Models.Activity", "Activity")
+                        .WithMany("Images")
+                        .HasForeignKey("ActivityId");
+
+                    b.Navigation("Activity");
+                });
+
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Waypoint", b =>
                 {
                     b.HasOne("VeloWorldSystem.Models.Entities.Models.Activity", "Activity")
@@ -635,6 +718,8 @@ namespace VeloWorldSystem.Data.Migrations
                 {
                     b.Navigation("Comments");
 
+                    b.Navigation("Images");
+
                     b.Navigation("Likes");
 
                     b.Navigation("Waypoints");
@@ -648,6 +733,11 @@ namespace VeloWorldSystem.Data.Migrations
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.BikeType", b =>
                 {
                     b.Navigation("Bikes");
+                });
+
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Image", b =>
+                {
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }
