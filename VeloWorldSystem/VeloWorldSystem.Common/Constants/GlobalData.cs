@@ -53,5 +53,14 @@ namespace VeloWorldSystem.Common.Constants
         {
             public const int ImageMaxUrlLength = 2048;
         }
+
+        public class ApplicationUser
+        {
+            public const int ApplicationUserMaxFirstNameLength = 20;
+            public const int ApplicationUserMinFirstNameLength = 2;
+
+            public const int ApplicationUserMaxLastNameLength = 20;
+            public const int ApplicationUserMinLastNameLength = 2;
+        }
     }
 }

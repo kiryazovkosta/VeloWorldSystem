@@ -27,6 +27,16 @@
 
         public DbSet<Image> Images { get; set; } = null!;
 
+        public DbSet<Challenge> Challenges { get; set; } = null!;
+
+        public DbSet<ApplicationUserChallenge> UserChallenges { get; set; } = null!;
+
+        public DbSet<Workout> Workouts { get; set; } = null!;
+
+        public DbSet<TrainingPlan> TrainingPlans { get; set; } = null!;
+
+        //public DbSet<ApplicationUserTrainingPlan> UserTrainingPlans { get; set; } = null!;
+
         public override int SaveChanges() 
             => this.SaveChanges(true);
 

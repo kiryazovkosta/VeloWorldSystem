@@ -178,8 +178,18 @@ namespace VeloWorldSystem.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
                     b.Property<int>("ImageId")
                         .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -312,6 +322,39 @@ namespace VeloWorldSystem.Data.Migrations
                     b.ToTable("ActivityLikes");
                 });
 
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.ApplicationUserChallenge", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ChallengeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "ChallengeId");
+
+                    b.HasIndex("ChallengeId");
+
+                    b.ToTable("UserChallenges");
+                });
+
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.ApplicationUserTrainingPlan", b =>
+                {
+                    b.Property<int>("TrainingPlanId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<bool>("IsComplited")
+                        .HasColumnType("bit");
+
+                    b.HasKey("TrainingPlanId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ApplicationUserTrainingPlan");
+                });
+
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Bike", b =>
                 {
                     b.Property<int>("Id")
@@ -404,6 +447,53 @@ namespace VeloWorldSystem.Data.Migrations
                     b.ToTable("BikeTypes");
                 });
 
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Challenge", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("BeginDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ChallengeType")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("EndDateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Challenges");
+                });
+
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Comment", b =>
                 {
                     b.Property<int>("Id")
@@ -487,6 +577,37 @@ namespace VeloWorldSystem.Data.Migrations
                     b.ToTable("Images");
                 });
 
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.TrainingPlan", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("TrainingPlans");
+                });
+
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Waypoint", b =>
                 {
                     b.Property<int>("ActivityId")
@@ -539,6 +660,42 @@ namespace VeloWorldSystem.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("Waypoints");
+                });
+
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Workout", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TrainingPlanId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.HasIndex("TrainingPlanId");
+
+                    b.ToTable("Workouts");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -641,6 +798,44 @@ namespace VeloWorldSystem.Data.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.ApplicationUserChallenge", b =>
+                {
+                    b.HasOne("VeloWorldSystem.Models.Entities.Models.Challenge", "Challenge")
+                        .WithMany()
+                        .HasForeignKey("ChallengeId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("VeloWorldSystem.Models.Entities.Identity.ApplicationUser", "User")
+                        .WithMany("Challenges")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Challenge");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.ApplicationUserTrainingPlan", b =>
+                {
+                    b.HasOne("VeloWorldSystem.Models.Entities.Models.TrainingPlan", "TrainingPlan")
+                        .WithMany("Users")
+                        .HasForeignKey("TrainingPlanId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("VeloWorldSystem.Models.Entities.Identity.ApplicationUser", "User")
+                        .WithMany("TrainingPlans")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("TrainingPlan");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Bike", b =>
                 {
                     b.HasOne("VeloWorldSystem.Models.Entities.Models.BikeType", "BikeType")
@@ -699,9 +894,22 @@ namespace VeloWorldSystem.Data.Migrations
                     b.Navigation("Activity");
                 });
 
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Workout", b =>
+                {
+                    b.HasOne("VeloWorldSystem.Models.Entities.Models.TrainingPlan", "TrainingPlan")
+                        .WithMany("Workouts")
+                        .HasForeignKey("TrainingPlanId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("TrainingPlan");
+                });
+
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Identity.ApplicationUser", b =>
                 {
                     b.Navigation("Activities");
+
+                    b.Navigation("Challenges");
 
                     b.Navigation("Claims");
 
@@ -712,6 +920,8 @@ namespace VeloWorldSystem.Data.Migrations
                     b.Navigation("Logins");
 
                     b.Navigation("Roles");
+
+                    b.Navigation("TrainingPlans");
                 });
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Activity", b =>
@@ -738,6 +948,13 @@ namespace VeloWorldSystem.Data.Migrations
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Image", b =>
                 {
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.TrainingPlan", b =>
+                {
+                    b.Navigation("Users");
+
+                    b.Navigation("Workouts");
                 });
 #pragma warning restore 612, 618
         }
