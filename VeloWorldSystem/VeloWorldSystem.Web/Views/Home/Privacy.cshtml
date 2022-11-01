@@ -4,3 +4,8 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+
+<form method="post" enctype="multipart/form-data"
+      asp-controller="Home" asp-action="Privacy">
+    <input type="file" name="file"><button type="submit" value="Upload">Upload</button>
+</form>

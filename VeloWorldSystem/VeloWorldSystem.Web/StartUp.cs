@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using VeloWorldSystem.Data;
 using VeloWorldSystem.Data.Settings;
+using VeloWorldSystem.GpxProcessing;
 using VeloWorldSystem.Models.Entities.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,7 +19,10 @@ builder.Services
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IGpxService, GpxService>();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
