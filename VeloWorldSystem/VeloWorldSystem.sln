@@ -30,7 +30,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Mapping", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Web", "VeloWorldSystem.Web\VeloWorldSystem.Web.csproj", "{4A1B1076-6071-4985-A861-8BDAEBE9553E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeloWorldSystem.GpxProcessing", "VeloWorldSystem.GpxProcessing\VeloWorldSystem.GpxProcessing.csproj", "{C106BA48-255D-4C09-AACD-EF9C4EBCCE29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.GpxProcessing", "VeloWorldSystem.GpxProcessing\VeloWorldSystem.GpxProcessing.csproj", "{C106BA48-255D-4C09-AACD-EF9C4EBCCE29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

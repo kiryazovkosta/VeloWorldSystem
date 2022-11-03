@@ -1,0 +1,17 @@
+﻿@using VeloWorldSystem.GpxProcessing.Models
+@model Gpx
+
+<h1>@Model?.Metadata?.Time</h1>
+
+<table>
+    @foreach (var item in @Model?.Trk?.Trkseg)
+    {
+        <tr>
+            <td>@item?.Time</td>
+            <td>@item?.Latitude</td>
+            <td>@item?.Longitude</td>
+            <td>@item?.Elevation</td>
+        </tr>
+    }
+    
+</table>

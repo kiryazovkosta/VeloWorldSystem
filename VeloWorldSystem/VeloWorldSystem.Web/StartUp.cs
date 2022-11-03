@@ -1,28 +1,15 @@
-using Microsoft.EntityFrameworkCore;
-using VeloWorldSystem.Data;
-using VeloWorldSystem.Data.Settings;
-using VeloWorldSystem.GpxProcessing;
-using VeloWorldSystem.Models.Entities.Identity;
+using VeloWorldSystem.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("VeloWorldSystemConnection");
-builder.Services
-    .AddDbContext<VeloWorldSystemDbContext>(options => options.UseSqlServer(connectionString));
-builder.Services
-    .AddDatabaseDeveloperPageExceptionFilter();
-
-builder.Services
-    .AddDefaultIdentity<ApplicationUser>(IdentityOptionsProvider.GetIdentityOptions)
-    .AddEntityFrameworkStores<VeloWorldSystemDbContext>();
-
-builder.Services.AddControllersWithViews();
-
-builder.Services.AddScoped<IGpxService, GpxService>();
+builder
+    .AddDbContext()
+    .AddDatabaseDeveloperPageExceptionFilter()
+    .AddIdentity()
+    .AddControllersWithViews()
+    .AddCloudinary()
+    .AddApplicationServices();
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -44,9 +31,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();

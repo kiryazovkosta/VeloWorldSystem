@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Upload file";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to upload image to the Cloudinary storage.</p>
+
+<form method="post" enctype="multipart/form-data" asp-controller="Test" asp-action="Image">
+
+    <label for="file" class="form-label">Please choose image file</label>
+    <input class="form-control" type="file" id="file" name="file">
+    <button type="submit" value="Image">Process</button>
+</form>

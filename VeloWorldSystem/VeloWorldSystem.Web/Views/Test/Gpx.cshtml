@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Gpx Loader";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to make a testing loading gpx file.</p>
+
+<form method="post" enctype="multipart/form-data" asp-controller="Test" asp-action="Gpx">
+
+    <label for="file" class="form-label">Please choose gpx file</label>
+    <input class="form-control" type="file" id="file" name="file">
+    <button type="submit" value="Gpx">Process</button>
+</form>
