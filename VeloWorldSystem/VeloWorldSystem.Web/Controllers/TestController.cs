@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SendInBlue;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using VeloWorldSystem.GpxProcessing;
 using VeloWorldSystem.Services.Libraries.Contracts;
 
@@ -51,7 +51,6 @@ namespace VeloWorldSystem.Web.Controllers
             }
             catch (Exception exception)
             {
-                // In case of missing Cloudinary configuration from appsettings.json
                 imageUrl = exception.Message;
             }
 
@@ -62,6 +61,12 @@ namespace VeloWorldSystem.Web.Controllers
         public IActionResult SendEmail()
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Error()
+        {
+            return View("Pinokio");
         }
     }
 }

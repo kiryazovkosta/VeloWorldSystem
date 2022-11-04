@@ -4,7 +4,7 @@
 <h1>@Model?.Metadata?.Time</h1>
 
 <table>
-    @foreach (var item in @Model?.Trk?.Trkseg)
+    @foreach (var item in @Model!.Trk!.Trkseg)
     {
         <tr>
             <td>@item?.Time</td>

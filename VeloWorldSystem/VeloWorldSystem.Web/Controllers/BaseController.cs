@@ -1,9 +1,8 @@
-﻿
-
-namespace VeloWorldSystem.Web.Controllers
+﻿namespace VeloWorldSystem.Web.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+
     public class BaseController : Controller
-    {
+    { 
     }
 }

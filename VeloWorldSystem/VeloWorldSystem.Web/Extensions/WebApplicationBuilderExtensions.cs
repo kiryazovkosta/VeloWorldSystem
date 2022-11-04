@@ -1,19 +1,18 @@
-﻿using CloudinaryDotNet;
-using VeloWorldSystem.Data;
-using VeloWorldSystem.GpxProcessing;
-using VeloWorldSystem.Models.Entities.Identity;
-using VeloWorldSystem.Services.Libraries.Contracts;
-using VeloWorldSystem.Services.Libraries;
-using Microsoft.EntityFrameworkCore;
-
-namespace VeloWorldSystem.Web.Extensions
+﻿namespace VeloWorldSystem.Web.Extensions
 {
+    using CloudinaryDotNet;
+    using VeloWorldSystem.Data;
+    using VeloWorldSystem.GpxProcessing;
+    using VeloWorldSystem.Models.Entities.Identity;
+    using VeloWorldSystem.Services.Libraries.Contracts;
+    using VeloWorldSystem.Services.Libraries;
+    using Microsoft.EntityFrameworkCore;
+
     public static class WebApplicationBuilderExtensions
     {
         public static WebApplicationBuilder AddDbContext(this WebApplicationBuilder builder)
         {
-            var connectionString = builder.Configuration
-                .GetConnectionString("VeloWorldSystemConnection");
+            var connectionString = builder.Configuration.GetConnectionString("VeloWorldSystemConnection");
             builder.Services
                 .AddDbContext<VeloWorldSystemDbContext>(options => 
                 {
@@ -66,8 +65,8 @@ namespace VeloWorldSystem.Web.Extensions
 
         public static WebApplicationBuilder AddApplicationServices(this WebApplicationBuilder builder)
         {
-            builder.Services.AddTransient<IGpxService, GpxService>();
-            builder.Services.AddTransient<ICloudinaryService, CloudinaryService>();
+            builder.Services.AddScoped<IGpxService, GpxService>();
+            builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
             return builder;
         }
     }

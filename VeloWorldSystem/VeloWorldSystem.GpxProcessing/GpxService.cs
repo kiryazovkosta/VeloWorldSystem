@@ -22,7 +22,7 @@
 
                 using (var reader = new StringReader(RemoveAllXmlNamespace(inputXml)))
                 {
-                    gpx = (Gpx)xmlSerializer.Deserialize(reader);
+                    gpx = (Gpx)xmlSerializer.Deserialize(reader)!;
                 }
             });
 
