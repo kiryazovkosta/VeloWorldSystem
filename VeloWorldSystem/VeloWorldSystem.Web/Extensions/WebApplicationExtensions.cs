@@ -1,4 +1,8 @@
-﻿namespace VeloWorldSystem.Web.Extensions
+﻿using System.Reflection;
+using VeloWorldSystem.DtoModels;
+using VeloWorldSystem.Mapping;
+
+namespace VeloWorldSystem.Web.Extensions
 {
     public static class WebApplicationExtensions
     {
@@ -33,6 +37,12 @@
             });
 
             return app;
+        }
+
+        public static WebApplication UseAutoMapper(this WebApplication builder)
+        {
+            AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
+            return builder;
         }
     }
 }

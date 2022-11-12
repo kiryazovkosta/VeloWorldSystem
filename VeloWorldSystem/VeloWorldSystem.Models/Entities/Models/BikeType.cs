@@ -3,7 +3,7 @@
     using System.ComponentModel.DataAnnotations;
     using VeloWorldSystem.Models.Abstract;
 
-    using static VeloWorldSystem.Common.Constants.GlobalData.BikeType;
+    using static VeloWorldSystem.Common.Constants.GlobalData.BikeTypeConstants;
 
     public class BikeType : BaseDeletableEntity<int>
     {

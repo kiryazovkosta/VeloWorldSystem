@@ -8,13 +8,13 @@ namespace VeloWorldSystem.Common.Constants
 {
     public class GlobalData
     {
-        public class BikeType
+        public class BikeTypeConstants
         {
             public const int BikeTypeMaxNameLength = 50;
             public const int BikeTypeMinNameLength = 3;
         }
 
-        public class Bike
+        public class BikeConstants
         {
             public const int BikeMaxNameLength = 50;
             public const int BikeMinNameLength = 3;
@@ -31,7 +31,7 @@ namespace VeloWorldSystem.Common.Constants
             public const int BikeMaxNotesLength = 255;
         }
 
-        public class Activity
+        public class ActivityConstants
         {
             public const int ActivityMaxTitleLength = 80;
             public const int ActivityMinTitleLength = 5;
@@ -43,18 +43,18 @@ namespace VeloWorldSystem.Common.Constants
             public const int ActivityMinPrivateNotesLength = 10;
         }
 
-        public class Comment
+        public class CommentConstants
         {
             public const int CommentMaxContentLength = 255;
             public const int CommentMinContentLength = 5;
         }
 
-        public class Image
+        public class ImageConstants
         {
             public const int ImageMaxUrlLength = 2048;
         }
 
-        public class ApplicationUser
+        public class ApplicationUserConstants
         {
             public const int ApplicationUserMaxFirstNameLength = 20;
             public const int ApplicationUserMinFirstNameLength = 2;

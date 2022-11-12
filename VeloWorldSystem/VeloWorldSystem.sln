@@ -14,8 +14,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Common", "VeloWorldSystem.Common\VeloWorldSystem.Common.csproj", "{8F6855CF-4068-40D6-BA5D-D64723DAB401}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{13E67952-627B-474B-B245-7CE32A80C772}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile3.txt = TextFile3.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4D17770E-295C-442A-BE20-62001114600C}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile1.txt = TextFile1.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6B91A7FB-6E9B-4C4E-9BE3-5036878CCA1B}"
 	ProjectSection(SolutionItems) = preProject
@@ -23,14 +29,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6B91A7FB
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B5BC3F00-2FF9-4618-BD42-04AD197BBCDD}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile2.txt = TextFile2.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9D44CDA9-532D-4F6A-A7BA-B84FDCAF6552}"
+	ProjectSection(SolutionItems) = preProject
+		TextFile4.txt = TextFile4.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Mapping", "VeloWorldSystem.Mapping\VeloWorldSystem.Mapping.csproj", "{8EA20E92-D667-4B59-B97D-595A01D6771A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Web", "VeloWorldSystem.Web\VeloWorldSystem.Web.csproj", "{4A1B1076-6071-4985-A861-8BDAEBE9553E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.GpxProcessing", "VeloWorldSystem.GpxProcessing\VeloWorldSystem.GpxProcessing.csproj", "{C106BA48-255D-4C09-AACD-EF9C4EBCCE29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeloWorldSystem.Infrastructure", "VeloWorldSystem.Infrastructure\VeloWorldSystem.Infrastructure.csproj", "{C973CF9D-E890-4430-B4B2-28EE06B594B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +84,10 @@ Global
 		{C106BA48-255D-4C09-AACD-EF9C4EBCCE29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C106BA48-255D-4C09-AACD-EF9C4EBCCE29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C106BA48-255D-4C09-AACD-EF9C4EBCCE29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C973CF9D-E890-4430-B4B2-28EE06B594B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C973CF9D-E890-4430-B4B2-28EE06B594B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C973CF9D-E890-4430-B4B2-28EE06B594B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C973CF9D-E890-4430-B4B2-28EE06B594B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +101,7 @@ Global
 		{8EA20E92-D667-4B59-B97D-595A01D6771A} = {9D44CDA9-532D-4F6A-A7BA-B84FDCAF6552}
 		{4A1B1076-6071-4985-A861-8BDAEBE9553E} = {13E67952-627B-474B-B245-7CE32A80C772}
 		{C106BA48-255D-4C09-AACD-EF9C4EBCCE29} = {9D44CDA9-532D-4F6A-A7BA-B84FDCAF6552}
+		{C973CF9D-E890-4430-B4B2-28EE06B594B1} = {13E67952-627B-474B-B245-7CE32A80C772}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89DB1A6D-F1C6-467D-B9BF-71675C538561}

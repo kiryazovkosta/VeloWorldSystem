@@ -4,7 +4,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using VeloWorldSystem.Models.Abstract;
     using VeloWorldSystem.Models.Entities.Identity;
-    using static VeloWorldSystem.Common.Constants.GlobalData.Image;
+    using static VeloWorldSystem.Common.Constants.GlobalData.ImageConstants;
 
     public class Image : BaseDeletableEntity<int>
     {

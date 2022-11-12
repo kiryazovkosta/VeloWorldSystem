@@ -9,10 +9,10 @@
     using VeloWorldSystem.Data.Repositories;
     using VeloWorldSystem.Models.Contracts;
 
-    public class EfDeletableRepository<T> : EfRepository<T>, IDeletableRepository<T>
+    public class DeletableRepository<T> : Repository<T>, IDeletableRepository<T>
         where T : class, IDeletableEntity
     {
-        public EfDeletableRepository(VeloWorldSystemDbContext context)
+        public DeletableRepository(VeloWorldSystemDbContext context)
             : base(context)
         {
         }

@@ -7,10 +7,10 @@
     using Microsoft.EntityFrameworkCore;
     using VeloWorldSystem.Data.Contracts;
 
-    public class EfRepository<T> : IRepository<T>
+    public class Repository<T> : IRepository<T>
         where T : class
     {
-        public EfRepository(VeloWorldSystemDbContext context)
+        public Repository(VeloWorldSystemDbContext context)
         {
             Context = context ?? throw new ArgumentNullException(nameof(context));
             DbSet = Context.Set<T>();

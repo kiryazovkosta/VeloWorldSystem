@@ -68,7 +68,7 @@ namespace VeloWorldSystem.Web.Controllers
             return View("Pinokio");
         }
 
-        public async Task<IActionResult> SendEmail()
+        public IActionResult SendEmail()
         {
             var apiKey = this.configuration["SendGrid:ApiKey"];
             var client = new SendGridClient(apiKey);

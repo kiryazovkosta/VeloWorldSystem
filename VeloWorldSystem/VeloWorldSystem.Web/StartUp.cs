@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Hosting;
 using VeloWorldSystem.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,9 @@ builder
     .AddApplicationServices();
 
 var app = builder.Build();
-app.UseEnvironment()
+app
+    .UseAutoMapper()
+    .UseEnvironment()
     .UseHttpsRedirection()
     .UseStaticFiles()
     .UseRouting()

@@ -7,7 +7,7 @@
     using Microsoft.AspNetCore.Identity;
     using VeloWorldSystem.Models.Entities.Models;
 
-    using static VeloWorldSystem.Common.Constants.GlobalData.ApplicationUser;
+    using static VeloWorldSystem.Common.Constants.GlobalData.ApplicationUserConstants;
 
     public class ApplicationUser : IdentityUser
     {

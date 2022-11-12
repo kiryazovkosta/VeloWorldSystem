@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using VeloWorldSystem.Models.Abstract;
     using VeloWorldSystem.Models.Entities.Identity;
-    using static VeloWorldSystem.Common.Constants.GlobalData.Activity;
+    using static VeloWorldSystem.Common.Constants.GlobalData.ActivityConstants;
 
     public class Activity : BaseDeletableEntity<int>
     {

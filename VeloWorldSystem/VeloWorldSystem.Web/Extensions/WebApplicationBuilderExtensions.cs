@@ -7,6 +7,15 @@
     using VeloWorldSystem.Services.Libraries.Contracts;
     using VeloWorldSystem.Services.Libraries;
     using Microsoft.EntityFrameworkCore;
+    using VeloWorldSystem.Services.Contracts;
+    using VeloWorldSystem.Services.Services;
+    using Microsoft.AspNetCore.Hosting;
+    using VeloWorldSystem.DtoModels;
+    using System.Reflection;
+    using VeloWorldSystem.Mapping;
+    using VeloWorldSystem.Data.Contracts;
+    using TestTemplate.Data.Repositories;
+    using VeloWorldSystem.Data.Repositories;
 
     public static class WebApplicationBuilderExtensions
     {
@@ -65,8 +74,16 @@
 
         public static WebApplicationBuilder AddApplicationServices(this WebApplicationBuilder builder)
         {
+            // Cloud and external libraries
             builder.Services.AddScoped<IGpxService, GpxService>();
             builder.Services.AddScoped<ICloudinaryService, CloudinaryService>();
+
+            // Repositories
+            builder.Services.AddScoped(typeof(IDeletableRepository<>), typeof(DeletableRepository<>));
+            builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+            // Entities
+            builder.Services.AddScoped<IBikeTypeService, BikeTypeService>();
             return builder;
         }
     }

@@ -9,7 +9,7 @@
     using System.Threading.Tasks;
     using VeloWorldSystem.Models.Abstract;
     using VeloWorldSystem.Models.Entities.Identity;
-    using static VeloWorldSystem.Common.Constants.GlobalData.Comment;
+    using static VeloWorldSystem.Common.Constants.GlobalData.CommentConstants;
 
     public class Comment : BaseDeletableEntity<int>
     {
