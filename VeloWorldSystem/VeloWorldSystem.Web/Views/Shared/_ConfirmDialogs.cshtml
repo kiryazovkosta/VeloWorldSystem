@@ -1,0 +1,39 @@
+﻿<input id="controllerName" type="hidden" name="controllerName" value="@(ViewContext?.RouteData?.Values["controller"]?.ToString() ?? string.Empty)" />
+<input id="areaName" type="hidden" name="areaName" value="@(ViewContext?.RouteData?.Values["area"]?.ToString() ?? string.Empty)" />
+<input id="selectedId" type="hidden" name="selectedId" />
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure to delete this record?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" value="Delete" id="confirmDelete">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="undeleteModal" tabindex="-1" aria-labelledby="undeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="undeleteModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure to undelete this record?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" value="Delete" id="confirmUndelete">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BikeTypeViewModel>
+
+@{
+    ViewBag.Title = "All Bike Types";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@await Html.PartialAsync("_ConfirmDialogs")
+
+<table class="table table-hover mb-0">
+    <thead>
+        <tr class="table-active bg-white">
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var bikeType in Model)
+            {
+                <tr class="table-info">
+                    <td>@bikeType.Name</td>
+                    <td>
+                        @if (!bikeType.IsDeleted)
+                        {
+                            <a asp-controller="BikeTypes" asp-action="Edit" asp-route-id="@bikeType.Id" class="btn btn-warning">Edit</a>
+                            <a asp-action="Delete" asp-route-id="@bikeType.Id" class="btn btn-danger"
+                                data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setId(@bikeType.Id)">Delete</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Undelete" asp-route-id="@bikeType.Id" class="btn btn-primary"
+                                data-bs-toggle="modal" data-bs-target="#undeleteModal" onclick="setId(@bikeType.Id)">Undelete</a>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/custom/confirm.js" asp-append-version="true"></script>
+}

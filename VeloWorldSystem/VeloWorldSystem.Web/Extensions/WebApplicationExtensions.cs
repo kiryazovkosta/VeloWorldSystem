@@ -23,16 +23,12 @@ namespace VeloWorldSystem.Web.Extensions
             return app;
         }
 
-        public static IApplicationBuilder MapEndPoints(this IApplicationBuilder app)
+        public static IApplicationBuilder UseEndPoints(this IApplicationBuilder app)
         {
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "areas",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapControllerRoute(
-                    name: "default", 
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("areaRoute", "{area:exists}/{controller=BikeTypes}/{action=All}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
 

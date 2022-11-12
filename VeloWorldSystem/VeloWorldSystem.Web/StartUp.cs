@@ -19,5 +19,6 @@ app
     .UseRouting()
     .UseAuthentication()
     .UseAuthorization()
-    .MapEndPoints();
+    .UseEndPoints();
+
 app.Run();

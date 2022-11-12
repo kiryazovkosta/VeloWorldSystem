@@ -1,11 +1,11 @@
-﻿namespace VeloWorldSystem.Web.Controllers
+﻿namespace VeloWorldSystem.Web.Areas.Administration.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
     using VeloWorldSystem.DtoModels.BikeTypes;
     using VeloWorldSystem.Services.Contracts;
     using VeloWorldSystem.Services.Services;
 
-    public class BikeTypesController : Controller
+    public class BikeTypesController : AreaBaseController
     {
         private readonly IBikeTypeService bikeTypeService;
 
@@ -66,12 +66,19 @@
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
+            if (!await this.bikeTypeService.Exists(id))
+            {
+                return NotFound();
+            }
+
+            await this.bikeTypeService.DeleteAsync(id);
             return RedirectToAction(nameof(this.All));
         }
 
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> Undelete(int id)
         {
+            await this.bikeTypeService.UndeleteAsync(id);
             return RedirectToAction(nameof(this.All));
         }
     }

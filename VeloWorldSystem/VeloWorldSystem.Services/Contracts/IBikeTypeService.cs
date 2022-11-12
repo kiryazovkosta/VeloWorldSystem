@@ -21,5 +21,7 @@ namespace VeloWorldSystem.Services.Contracts
         Task UpdateAsync(int id, BikeTypeInputModel model);
 
         Task DeleteAsync(int id);
+
+        Task UndeleteAsync(int id);
     }
 }

@@ -18,7 +18,7 @@
 
         public async Task<bool> Exists(int id)
         {
-            return await this.bikeTypesRepo.AllAsNoTrackingWithDeleted().AnyAsync(bt => bt.Id == id);
+            return await this.bikeTypesRepo.AllAsNoTracking().AnyAsync(bt => bt.Id == id);
         }
 
         public async Task<T> GetByIdAsync<T>(int id)
@@ -58,6 +58,13 @@
         {
             var bikeType = await this.bikeTypesRepo.All().FirstOrDefaultAsync(bt => bt.Id == id);
             this.bikeTypesRepo.Delete(bikeType);
+            await this.bikeTypesRepo.SaveChangesAsync();
+        }
+
+        public async Task UndeleteAsync(int id)
+        {
+            var bikeType = await this.bikeTypesRepo.AllWithDeleted().FirstOrDefaultAsync(bt => bt.Id == id && bt.IsDeleted);
+            this.bikeTypesRepo.Undelete(bikeType);
             await this.bikeTypesRepo.SaveChangesAsync();
         }
     }
