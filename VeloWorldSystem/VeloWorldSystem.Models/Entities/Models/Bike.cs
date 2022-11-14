@@ -4,12 +4,12 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using VeloWorldSystem.Models.Abstract;
     using VeloWorldSystem.Models.Entities.Identity;
-    using static VeloWorldSystem.Common.Constants.GlobalData.BikeConstants;
+    using static VeloWorldSystem.Common.Constants.DataConstants;
 
     public class Bike : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(BikeMaxNameLength)]
+        [MaxLength(BikeConstants.BikeMaxNameLength)]
         public string Name { get; set; } = null!;
 
         [Required]
@@ -21,14 +21,14 @@
         public double Weight { get; set; }
 
         [Required]
-        [MaxLength(BikeMaxBrandLength)]
+        [MaxLength(BikeConstants.BikeMaxBrandLength)]
         public string Brand { get; set; } = null!;
 
         [Required]
-        [MaxLength(BikeMaxModelLength)]
+        [MaxLength(BikeConstants.BikeMaxModelLength)]
         public string Model { get; set; } = null!;
 
-        [MaxLength(BikeMaxNotesLength)]
+        [MaxLength(BikeConstants.BikeMaxNotesLength)]
         public string? Notes { get; set; }
 
         [Required]

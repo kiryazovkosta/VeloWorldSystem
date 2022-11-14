@@ -72,6 +72,13 @@
             return builder;
         }
 
+        public static WebApplicationBuilder AddSendGrid(this WebApplicationBuilder builder)
+        {
+            builder.Services.AddTransient<IEmailSender>(serviceProvider =>
+                new SendGridEmailSender(builder.Configuration["SendGrid:ApiKey"]));
+            return builder;
+        }
+
         public static WebApplicationBuilder AddApplicationServices(this WebApplicationBuilder builder)
         {
             // Cloud and external libraries
@@ -83,6 +90,7 @@
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
             // Entities
+            builder.Services.AddScoped<IUsersService, UsersService>();
             builder.Services.AddScoped<IBikeTypeService, BikeTypeService>();
             return builder;
         }

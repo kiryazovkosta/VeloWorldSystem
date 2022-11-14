@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VeloWorldSystem.Common.Constants
+﻿namespace VeloWorldSystem.Common.Constants
 {
-    public class GlobalData
+    public class DataConstants
     {
         public class BikeTypeConstants
         {
@@ -41,6 +35,9 @@ namespace VeloWorldSystem.Common.Constants
 
             public const int ActivityMaxPrivateNotesLength = 255;
             public const int ActivityMinPrivateNotesLength = 10;
+
+            public const int ActivityDestancePrecision = 7;
+            public const int ActivityDestanceScale = 3;
         }
 
         public class CommentConstants
@@ -61,6 +58,36 @@ namespace VeloWorldSystem.Common.Constants
 
             public const int ApplicationUserMaxLastNameLength = 20;
             public const int ApplicationUserMinLastNameLength = 2;
+
+            public const int ApplicationUserMaxImageUrlLength = 2048;
+            
+        }
+
+        public class ChallengeConstants
+        {
+            public const int ChallengeMaxTitleLength = 80;
+            public const int ChallengeMinTitleLength = 5;
+
+            public const int ChallengeMaxDescriptionLength = 255;
+            public const int ChallengeMinDescriptionLength = 10;
+        }
+        
+        public class TrainingPlanConstants
+        {
+            public const int TrainingPlanMaxTitleLength = 80;
+            public const int TrainingPlanMinTitleLength = 5;
+        }
+
+        public class WaypointConstants
+        {
+            public const int ActivityLatitudePrecision = 12;
+            public const int ActivityLatitudeScale = 9;
+
+            public const int ActivityLongitudePrecision = 12;
+            public const int ActivityLongitudeScale = 9;
+
+            public const int ActivitySpeedPrecision = 12;
+            public const int ActivitySpeedScale = 3;
         }
     }
 }

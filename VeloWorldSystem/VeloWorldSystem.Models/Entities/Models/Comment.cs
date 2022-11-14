@@ -1,20 +1,15 @@
 ﻿namespace VeloWorldSystem.Models.Entities.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using VeloWorldSystem.Models.Abstract;
     using VeloWorldSystem.Models.Entities.Identity;
-    using static VeloWorldSystem.Common.Constants.GlobalData.CommentConstants;
+    using static VeloWorldSystem.Common.Constants.DataConstants;
 
     public class Comment : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(CommentMaxContentLength)]
+        [MaxLength(CommentConstants.CommentMaxContentLength)]
         public string Content { get; set; } = null!;
 
         [Required]

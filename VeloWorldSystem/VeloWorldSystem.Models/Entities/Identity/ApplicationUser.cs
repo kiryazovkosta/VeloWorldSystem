@@ -3,13 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using Microsoft.AspNetCore.Identity;
+    using VeloWorldSystem.Models.Contracts;
     using VeloWorldSystem.Models.Entities.Models;
 
-    using static VeloWorldSystem.Common.Constants.GlobalData.ApplicationUserConstants;
+    using static VeloWorldSystem.Common.Constants.DataConstants;
 
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {
         public ApplicationUser()
         {
@@ -17,17 +17,16 @@
         }
 
         [Required]
-        [MaxLength(ApplicationUserMaxFirstNameLength)]
+        [MaxLength(ApplicationUserConstants.ApplicationUserMaxFirstNameLength)]
         public string FirstName { get; set; } = null!;
 
         [Required]
-        [MaxLength(ApplicationUserMaxLastNameLength)]
+        [MaxLength(ApplicationUserConstants.ApplicationUserMaxLastNameLength)]
         public string LastName { get; set; } = null!;
 
         [Required]
-        [ForeignKey(nameof(Image))]
-        public int ImageId { get; set; }
-        public Image Image { get; set; } = null!;
+        [MaxLength(ApplicationUserConstants.ApplicationUserMaxImageUrlLength)]
+        public string ImageUrl { get; set; } = null!;
 
         public ICollection<Activity> Activities { get; set; } = new HashSet<Activity>();
 
@@ -48,5 +47,13 @@
 
         public virtual ICollection<IdentityUserLogin<string>> Logins { get; set; }
             = new HashSet<IdentityUserLogin<string>>();
+
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime? ModifiedAt { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public DateTime? DeletedAt { get; set; }
     }
 }

@@ -1,21 +1,31 @@
 ﻿namespace VeloWorldSystem.Models.Entities.Models
 {
+    using System.ComponentModel.DataAnnotations;
     using VeloWorldSystem.Common.Enumerations;
     using VeloWorldSystem.Models.Abstract;
-    using VeloWorldSystem.Models.Entities.Identity;
+
+    using static VeloWorldSystem.Common.Constants.DataConstants;
 
     public class Challenge : BaseDeletableEntity<int>
     {
+        [Required]
+        [MaxLength(ChallengeConstants.ChallengeMaxTitleLength)]
         public string Title { get; set; } = null!;
-        
+
+        [Required]
+        [MaxLength(ChallengeConstants.ChallengeMaxDescriptionLength)]
         public string Description { get; set; } = null!;
 
+        [Required]
         public DateTime BeginDateTime { get; set; }
 
+        [Required]
         public DateTime EndDateTime { get; set; }
 
+        [Required]
         public ChallengeType ChallengeType { get; set; }
 
+        [Required]
         public bool IsActive { get; set; }  
 
         public ICollection<ApplicationUserChallenge> Users = new HashSet<ApplicationUserChallenge>();

@@ -8,6 +8,7 @@ builder
     .AddIdentity()
     .AddControllersWithViews()
     .AddCloudinary()
+    .AddSendGrid()
     .AddApplicationServices();
 
 var app = builder.Build();

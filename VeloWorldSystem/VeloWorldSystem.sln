@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Services", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Common", "VeloWorldSystem.Common\VeloWorldSystem.Common.csproj", "{8F6855CF-4068-40D6-BA5D-D64723DAB401}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{13E67952-627B-474B-B245-7CE32A80C772}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{13E67952-627B-474B-B245-7CE32A80C772}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{4D17770E-295C-442A-BE20-62001114600C}"
 EndProject

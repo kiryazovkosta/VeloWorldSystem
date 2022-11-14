@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VeloWorldSystem.Data;
 
@@ -11,9 +12,10 @@ using VeloWorldSystem.Data;
 namespace VeloWorldSystem.Data.Migrations
 {
     [DbContext(typeof(VeloWorldSystemDbContext))]
-    partial class VeloWorldSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221113142026_ExtendApplicationUser")]
+    partial class ExtendApplicationUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -189,10 +191,8 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasMaxLength(2048)
-                        .HasColumnType("nvarchar(2048)");
+                    b.Property<int>("ImageId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -239,6 +239,9 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ImageId")
+                        .IsUnique();
 
                     b.HasIndex("IsDeleted");
 
@@ -486,8 +489,7 @@ namespace VeloWorldSystem.Data.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("EndDateTime")
                         .HasColumnType("datetime2");
@@ -503,8 +505,7 @@ namespace VeloWorldSystem.Data.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -584,6 +585,9 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasMaxLength(2048)
                         .HasColumnType("nvarchar(2048)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ActivityId");
@@ -615,8 +619,7 @@ namespace VeloWorldSystem.Data.Migrations
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -764,6 +767,17 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Identity.ApplicationUser", b =>
+                {
+                    b.HasOne("VeloWorldSystem.Models.Entities.Models.Image", "Image")
+                        .WithOne("User")
+                        .HasForeignKey("VeloWorldSystem.Models.Entities.Identity.ApplicationUser", "ImageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Image");
                 });
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Activity", b =>
@@ -949,6 +963,11 @@ namespace VeloWorldSystem.Data.Migrations
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.BikeType", b =>
                 {
                     b.Navigation("Bikes");
+                });
+
+            modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Image", b =>
+                {
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.TrainingPlan", b =>

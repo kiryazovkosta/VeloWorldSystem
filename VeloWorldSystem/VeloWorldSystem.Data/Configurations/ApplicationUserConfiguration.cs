@@ -8,6 +8,8 @@
     {
         public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
+            builder.HasIndex(au => au.UserName).IsUnique();
+
             builder
                 .HasMany(e => e.Claims)
                 .WithOne()

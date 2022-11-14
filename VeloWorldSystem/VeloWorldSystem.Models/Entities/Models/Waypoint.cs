@@ -5,6 +5,8 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using VeloWorldSystem.Models.Abstract;
 
+    using static VeloWorldSystem.Common.Constants.DataConstants;
+
     public class Waypoint : BaseDeletableEntity<int>
     {
         [Required]
@@ -16,11 +18,11 @@
         public int OrderNumber { get; set; }
 
         [Required]
-        [Precision(12, 9)]
+        [Precision(WaypointConstants.ActivityLatitudePrecision, WaypointConstants.ActivityLatitudeScale)]
         public decimal Latitude { get; set; }
 
         [Required]
-        [Precision(12, 9)]
+        [Precision(WaypointConstants.ActivityLongitudePrecision, WaypointConstants.ActivityLongitudeScale)]
         public decimal Longitude { get; set; }
 
         [Required]
@@ -34,7 +36,7 @@
         
         public int? HeartRate { get; set; }
 
-        [Precision(5, 3)]
+        [Precision(WaypointConstants.ActivitySpeedPrecision, WaypointConstants.ActivitySpeedScale)]
         public decimal Speed { get; set; }
     }
 }

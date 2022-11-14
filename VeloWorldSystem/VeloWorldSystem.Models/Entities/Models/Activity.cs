@@ -5,22 +5,22 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using VeloWorldSystem.Models.Abstract;
     using VeloWorldSystem.Models.Entities.Identity;
-    using static VeloWorldSystem.Common.Constants.GlobalData.ActivityConstants;
+    using static VeloWorldSystem.Common.Constants.DataConstants;
 
     public class Activity : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(ActivityMaxTitleLength)]
+        [MaxLength(ActivityConstants.ActivityMaxTitleLength)]
         public string Title { get; set; } = null!;
 
-        [MaxLength(ActivityMaxDescriptionLength)]
+        [MaxLength(ActivityConstants.ActivityMaxDescriptionLength)]
         public string? Description { get; set; } = null!;
 
-        [MaxLength(ActivityMaxPrivateNotesLength)]
+        [MaxLength(ActivityConstants.ActivityMaxPrivateNotesLength)]
         public string? PrivateNotes { get; set; } = null!;
 
         [Required]
-        [Precision(7, 3)]
+        [Precision(ActivityConstants.ActivityDestancePrecision, ActivityConstants.ActivityDestanceScale)]
         public decimal Destance { get; set; }
 
         [Required]

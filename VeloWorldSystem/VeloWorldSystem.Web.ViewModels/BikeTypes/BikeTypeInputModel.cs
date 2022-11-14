@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VeloWorldSystem.Mapping;
 using VeloWorldSystem.Models.Entities.Models;
-using static VeloWorldSystem.Common.Constants.GlobalData.BikeTypeConstants;
+using static VeloWorldSystem.Common.Constants.DataConstants.BikeTypeConstants;
 
 namespace VeloWorldSystem.DtoModels.BikeTypes
 {
