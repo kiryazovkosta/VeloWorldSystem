@@ -109,6 +109,23 @@ namespace VeloWorldSystem.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "a45b8508-7efc-4623-9798-747a484f8820",
+                            RoleId = "22ec17b7-7cbd-4445-8713-5f2ab9397c31"
+                        },
+                        new
+                        {
+                            UserId = "3816a499-e914-41cf-826a-f5cf586080be",
+                            RoleId = "f0389a1b-ffb9-4def-93ad-5417e1e6b30d"
+                        },
+                        new
+                        {
+                            UserId = "0f30c80a-0577-4e35-8aae-93427e32debb",
+                            RoleId = "df3ae2b8-98db-434b-b250-136c48638390"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -157,6 +174,29 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "22ec17b7-7cbd-4445-8713-5f2ab9397c31",
+                            ConcurrencyStamp = "c80d578d-0c2a-4a6c-aac0-3a6bea672ef0",
+                            Name = "Member",
+                            NormalizedName = "MEMBER"
+                        },
+                        new
+                        {
+                            Id = "f0389a1b-ffb9-4def-93ad-5417e1e6b30d",
+                            ConcurrencyStamp = "d5aaf5c6-be34-4bc5-a1cb-07ccfb4e0604",
+                            Name = "SuperMember",
+                            NormalizedName = "SUPERMEMBER"
+                        },
+                        new
+                        {
+                            Id = "df3ae2b8-98db-434b-b250-136c48638390",
+                            ConcurrencyStamp = "2de6d5c0-20ed-4685-b8ac-7198dadeaa60",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        });
                 });
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Identity.ApplicationUser", b =>
@@ -255,6 +295,71 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasFilter("[UserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "a45b8508-7efc-4623-9798-747a484f8820",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c14a12c8-bee9-4d95-8552-6c8d79ffdbfc",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "user@example.com",
+                            EmailConfirmed = true,
+                            FirstName = "Demo",
+                            ImageUrl = "https://res.cloudinary.com/dfn7thtsx/image/upload/v1668419470/l2qtxtgwz8pyk6zhbqpv.png",
+                            IsDeleted = false,
+                            LastName = "User",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "USER@EXAMPLE.COM",
+                            NormalizedUserName = "USER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEM+OaHBby1y2marBvBNz7RfrdrdnWn+LgEIn4h9AUAA1tPShrYmmDqPpVNydGJPWng==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "93dd68e3-54e4-47d8-93ab-f6bb795ac481",
+                            TwoFactorEnabled = false,
+                            UserName = "user"
+                        },
+                        new
+                        {
+                            Id = "3816a499-e914-41cf-826a-f5cf586080be",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "844a4273-e5c8-4688-ac69-eec4e51a10f9",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "superuser@example.com",
+                            EmailConfirmed = true,
+                            FirstName = "Super",
+                            ImageUrl = "https://res.cloudinary.com/dfn7thtsx/image/upload/v1668419470/l2qtxtgwz8pyk6zhbqpv.png",
+                            IsDeleted = false,
+                            LastName = "User",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "SUPERUSER@EXAMPLE.COM",
+                            NormalizedUserName = "SUPER",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPd63OBmWLaNO20SsaiNhUN73IzZNsTy6yMEgn+NwNMpByUT8qFpkri7xC4S4XAMOg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "4f096519-6019-415f-b521-fcae26732ab5",
+                            TwoFactorEnabled = false,
+                            UserName = "super"
+                        },
+                        new
+                        {
+                            Id = "0f30c80a-0577-4e35-8aae-93427e32debb",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "62afab3f-b446-4f7d-969b-2b714555a577",
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Email = "kosta.kiryazov@yahoo.com",
+                            EmailConfirmed = true,
+                            FirstName = "Kosta",
+                            ImageUrl = "https://res.cloudinary.com/dfn7thtsx/image/upload/v1668419470/l2qtxtgwz8pyk6zhbqpv.png",
+                            IsDeleted = false,
+                            LastName = "Kiryazov",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "KOSTA.KIRYAZOV@YAHOO.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAEAACcQAAAAEO83fG9cPpNmH6uErZs8XAVVApkLPvFEzeMWJApXEwk6zSqt/TeG4fxNC7q/af9WUQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "c43a2cd3-95e6-46fa-b7d0-a1de0caf4bfb",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        });
                 });
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Activity", b =>
@@ -462,6 +567,43 @@ namespace VeloWorldSystem.Data.Migrations
                     b.HasIndex("IsDeleted");
 
                     b.ToTable("BikeTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Road Bike"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Mountain Bike"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "TT Bike"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Cross Bike"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IsDeleted = false,
+                            Name = "Gravel Bike"
+                        });
                 });
 
             modelBuilder.Entity("VeloWorldSystem.Models.Entities.Models.Challenge", b =>
@@ -663,8 +805,8 @@ namespace VeloWorldSystem.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<decimal>("Speed")
-                        .HasPrecision(5, 3)
-                        .HasColumnType("decimal(5,3)");
+                        .HasPrecision(12, 3)
+                        .HasColumnType("decimal(12,3)");
 
                     b.Property<int>("Temperature")
                         .HasColumnType("int");

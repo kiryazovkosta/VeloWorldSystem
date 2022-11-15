@@ -10,17 +10,17 @@
     public class Activity : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(ActivityConstants.ActivityMaxTitleLength)]
+        [MaxLength(ActivityConstants.TitleMaxLength)]
         public string Title { get; set; } = null!;
 
-        [MaxLength(ActivityConstants.ActivityMaxDescriptionLength)]
+        [MaxLength(ActivityConstants.DescriptionMaxLength)]
         public string? Description { get; set; } = null!;
 
-        [MaxLength(ActivityConstants.ActivityMaxPrivateNotesLength)]
+        [MaxLength(ActivityConstants.PrivateNotesMaxLength)]
         public string? PrivateNotes { get; set; } = null!;
 
         [Required]
-        [Precision(ActivityConstants.ActivityDestancePrecision, ActivityConstants.ActivityDestanceScale)]
+        [Precision(ActivityConstants.DestancePrecision, ActivityConstants.DestanceScale)]
         public decimal Destance { get; set; }
 
         [Required]

@@ -17,15 +17,15 @@
         }
 
         [Required]
-        [MaxLength(ApplicationUserConstants.ApplicationUserMaxFirstNameLength)]
+        [MaxLength(ApplicationUserConstants.FirstNameMaxLength)]
         public string FirstName { get; set; } = null!;
 
         [Required]
-        [MaxLength(ApplicationUserConstants.ApplicationUserMaxLastNameLength)]
+        [MaxLength(ApplicationUserConstants.LastNameMaxLength)]
         public string LastName { get; set; } = null!;
 
         [Required]
-        [MaxLength(ApplicationUserConstants.ApplicationUserMaxImageUrlLength)]
+        [MaxLength(ApplicationUserConstants.ImageUrlMaxLength)]
         public string ImageUrl { get; set; } = null!;
 
         public ICollection<Activity> Activities { get; set; } = new HashSet<Activity>();

@@ -1,93 +1,102 @@
 ﻿namespace VeloWorldSystem.Common.Constants
 {
-    public class DataConstants
+    public static class DataConstants
     {
-        public class BikeTypeConstants
+        public static class BikeTypeConstants
         {
-            public const int BikeTypeMaxNameLength = 50;
-            public const int BikeTypeMinNameLength = 3;
+            public const int NameMaxLength = 50;
+            public const int NameMinLength = 3;
         }
 
-        public class BikeConstants
+        public static class BikeConstants
         {
-            public const int BikeMaxNameLength = 50;
-            public const int BikeMinNameLength = 3;
+            public const int NameMaxLength = 50;
+            public const int NameMinLength = 3;
 
-            public const double BikeWeightMinValue = 0.00;
-            public const double BikeWeightMaxValue = 100.00;
+            public const double WeightMaxValue = 100.00;
+            public const double WeightMinValue = 0.00;
 
-            public const int BikeMaxBrandLength = 50;
-            public const int BikeMinBrandLength = 5;
+            public const int BrandMaxLength = 50;
+            public const int BrandMinLength = 5;
 
-            public const int BikeMaxModelLength = 50;
-            public const int BikeMinModelLength = 5;
+            public const int ModelMaxLength = 50;
+            public const int ModelMinLength = 5;
 
-            public const int BikeMaxNotesLength = 255;
+            public const int NotesMaxLength = 255;
         }
 
-        public class ActivityConstants
+        public static class ActivityConstants
         {
-            public const int ActivityMaxTitleLength = 80;
-            public const int ActivityMinTitleLength = 5;
+            public const int TitleMaxLength = 80;
+            public const int TitleMinLength = 5;
 
-            public const int ActivityMaxDescriptionLength = 255;
-            public const int ActivityMinDescriptionLength = 10;
+            public const int DescriptionMaxLength = 255;
+            public const int DescriptionMinLength = 10;
 
-            public const int ActivityMaxPrivateNotesLength = 255;
-            public const int ActivityMinPrivateNotesLength = 10;
+            public const int PrivateNotesMaxLength = 255;
+            public const int PrivateNotesMinLength = 10;
 
-            public const int ActivityDestancePrecision = 7;
-            public const int ActivityDestanceScale = 3;
+            public const int DestancePrecision = 7;
+            public const int DestanceScale = 3;
         }
 
-        public class CommentConstants
+        public static class CommentConstants
         {
-            public const int CommentMaxContentLength = 255;
-            public const int CommentMinContentLength = 5;
+            public const int ContentMaxLength = 255;
+            public const int ContentMinLength = 5;
         }
 
-        public class ImageConstants
+        public static class ImageConstants
         {
-            public const int ImageMaxUrlLength = 2048;
+            public const int UrlMaxLength = 2048;
         }
 
-        public class ApplicationUserConstants
+        public static class ApplicationUserConstants
         {
-            public const int ApplicationUserMaxFirstNameLength = 20;
-            public const int ApplicationUserMinFirstNameLength = 2;
+            public const int FirstNameMaxLength = 20;
+            public const int FirstNameMinLength = 2;
 
-            public const int ApplicationUserMaxLastNameLength = 20;
-            public const int ApplicationUserMinLastNameLength = 2;
+            public const int LastNameMaxLength = 20;
+            public const int LastNameMinLength = 2;
 
-            public const int ApplicationUserMaxImageUrlLength = 2048;
-            
+            public const int ImageUrlMaxLength = 2048;
+
+            public const int PasswordMaxLength = 100;
+            public const int PasswordMinLength = 6;
         }
 
-        public class ChallengeConstants
+        public static class ChallengeConstants
         {
-            public const int ChallengeMaxTitleLength = 80;
-            public const int ChallengeMinTitleLength = 5;
+            public const int TitleMaxLength = 80;
+            public const int TitleMinLength = 5;
 
-            public const int ChallengeMaxDescriptionLength = 255;
-            public const int ChallengeMinDescriptionLength = 10;
+            public const int DescriptionMaxLength = 255;
+            public const int DescriptionMinLength = 10;
         }
         
-        public class TrainingPlanConstants
+        public static class TrainingPlanConstants
         {
-            public const int TrainingPlanMaxTitleLength = 80;
-            public const int TrainingPlanMinTitleLength = 5;
+            public const int TitleMaxLength = 80;
+            public const int TitleMinLength = 5;
         }
 
-        public class WaypointConstants
+        public static class WaypointConstants
         {
-            public const int ActivityLatitudePrecision = 12;
-            public const int ActivityLatitudeScale = 9;
+            public const int LatitudePrecision = 12;
+            public const int LatitudeScale = 9;
 
-            public const int ActivityLongitudePrecision = 12;
-            public const int ActivityLongitudeScale = 9;
+            public const int LongitudePrecision = 12;
+            public const int LongitudeScale = 9;
 
-            public const int ActivitySpeedPrecision = 12;
-            public const int ActivitySpeedScale = 3;
+            public const int SpeedPrecision = 12;
+            public const int SpeedScale = 3;
+        }
+
+        public static class ApplicationRoleConstants
+        {
+            public const string MemberRole = "Member";
+            public const string SuperMemberRole = "SuperMember";
+            public const string AdminRole = "Administrator";
         }
     }
 }

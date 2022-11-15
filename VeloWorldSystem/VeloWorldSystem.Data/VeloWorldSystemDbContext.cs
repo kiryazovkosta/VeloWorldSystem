@@ -1,5 +1,6 @@
 ﻿namespace VeloWorldSystem.Data
 {
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using VeloWorldSystem.Models.Contracts;
@@ -61,8 +62,33 @@
         {
             base.OnModelCreating(builder);
             this.ConfigureEntityTypes(builder);
+            this.SetUsersAndRoles(builder);
             this.ConfigureIsDeletedIndex(builder);
             this.ConfigureGlobalDisableCascadeDelete(builder);
+        }
+
+        private void SetUsersAndRoles(ModelBuilder builder)
+        {
+            builder.Entity<IdentityUserRole<string>>()
+                .HasData(new List<IdentityUserRole<string>>()
+                {
+                    new IdentityUserRole<string>()
+                    {
+                        UserId = "a45b8508-7efc-4623-9798-747a484f8820",
+                        RoleId = "22ec17b7-7cbd-4445-8713-5f2ab9397c31",
+                    },
+                    new IdentityUserRole<string>()
+                    {
+                        UserId = "3816a499-e914-41cf-826a-f5cf586080be",
+                        RoleId = "f0389a1b-ffb9-4def-93ad-5417e1e6b30d",
+                    },
+                    new IdentityUserRole<string>()
+                    {
+                        UserId = "0f30c80a-0577-4e35-8aae-93427e32debb",
+                        RoleId = "df3ae2b8-98db-434b-b250-136c48638390",
+                    },
+                    
+                });
         }
 
         private void ConfigureGlobalDisableCascadeDelete(ModelBuilder builder)

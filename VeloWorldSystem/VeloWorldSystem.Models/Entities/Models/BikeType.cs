@@ -8,7 +8,7 @@
     public class BikeType : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(BikeTypeConstants.BikeTypeMaxNameLength)]
+        [MaxLength(BikeTypeConstants.NameMaxLength)]
         public string Name { get; set; } = null!;
 
         public ICollection<Bike> Bikes { get; set; } = new HashSet<Bike>();

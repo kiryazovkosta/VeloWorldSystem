@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VeloWorldSystem.Common\VeloWorldSystem.Common.csproj" />
+    <ProjectReference Include="..\VeloWorldSystem.Infrastructure\VeloWorldSystem.Infrastructure.csproj" />
     <ProjectReference Include="..\VeloWorldSystem.Mapping\VeloWorldSystem.Mapping.csproj" />
     <ProjectReference Include="..\VeloWorldSystem.Models\VeloWorldSystem.Models.csproj" />
   </ItemGroup>

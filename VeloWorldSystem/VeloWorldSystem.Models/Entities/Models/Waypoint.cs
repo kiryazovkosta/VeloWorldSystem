@@ -18,11 +18,11 @@
         public int OrderNumber { get; set; }
 
         [Required]
-        [Precision(WaypointConstants.ActivityLatitudePrecision, WaypointConstants.ActivityLatitudeScale)]
+        [Precision(WaypointConstants.LatitudePrecision, WaypointConstants.LatitudeScale)]
         public decimal Latitude { get; set; }
 
         [Required]
-        [Precision(WaypointConstants.ActivityLongitudePrecision, WaypointConstants.ActivityLongitudeScale)]
+        [Precision(WaypointConstants.LongitudePrecision, WaypointConstants.LongitudeScale)]
         public decimal Longitude { get; set; }
 
         [Required]
@@ -36,7 +36,7 @@
         
         public int? HeartRate { get; set; }
 
-        [Precision(WaypointConstants.ActivitySpeedPrecision, WaypointConstants.ActivitySpeedScale)]
+        [Precision(WaypointConstants.SpeedPrecision, WaypointConstants.SpeedScale)]
         public decimal Speed { get; set; }
     }
 }

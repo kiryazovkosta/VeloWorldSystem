@@ -8,7 +8,7 @@
     public class TrainingPlan : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(TrainingPlanConstants.TrainingPlanMaxTitleLength)]
+        [MaxLength(TrainingPlanConstants.TitleMaxLength)]
         public string Title { get; set; } = null!;
 
         public ICollection<Workout> Workouts { get; set; } 

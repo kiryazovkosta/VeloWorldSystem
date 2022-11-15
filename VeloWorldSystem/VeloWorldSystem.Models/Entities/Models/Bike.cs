@@ -9,7 +9,7 @@
     public class Bike : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(BikeConstants.BikeMaxNameLength)]
+        [MaxLength(BikeConstants.NameMaxLength)]
         public string Name { get; set; } = null!;
 
         [Required]
@@ -21,14 +21,14 @@
         public double Weight { get; set; }
 
         [Required]
-        [MaxLength(BikeConstants.BikeMaxBrandLength)]
+        [MaxLength(BikeConstants.BrandMaxLength)]
         public string Brand { get; set; } = null!;
 
         [Required]
-        [MaxLength(BikeConstants.BikeMaxModelLength)]
+        [MaxLength(BikeConstants.ModelMaxLength)]
         public string Model { get; set; } = null!;
 
-        [MaxLength(BikeConstants.BikeMaxNotesLength)]
+        [MaxLength(BikeConstants.NotesMaxLength)]
         public string? Notes { get; set; }
 
         [Required]

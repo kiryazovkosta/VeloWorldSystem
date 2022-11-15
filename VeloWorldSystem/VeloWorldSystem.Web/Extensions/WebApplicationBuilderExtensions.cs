@@ -9,13 +9,10 @@
     using Microsoft.EntityFrameworkCore;
     using VeloWorldSystem.Services.Contracts;
     using VeloWorldSystem.Services.Services;
-    using Microsoft.AspNetCore.Hosting;
-    using VeloWorldSystem.DtoModels;
-    using System.Reflection;
-    using VeloWorldSystem.Mapping;
     using VeloWorldSystem.Data.Contracts;
     using TestTemplate.Data.Repositories;
     using VeloWorldSystem.Data.Repositories;
+    using VeloWorldSystem.Common.Constants;
 
     public static class WebApplicationBuilderExtensions
     {
@@ -46,8 +43,9 @@
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
                     options.Password.RequireNonAlphanumeric = false;
-                    options.Password.RequiredLength = 6;
+                    options.Password.RequiredLength = DataConstants.ApplicationUserConstants.PasswordMinLength;
                     options.User.RequireUniqueEmail = true;
+                    options.SignIn.RequireConfirmedAccount = true;
                 })
                 .AddRoles<ApplicationRole>()
                 .AddEntityFrameworkStores<VeloWorldSystemDbContext>();

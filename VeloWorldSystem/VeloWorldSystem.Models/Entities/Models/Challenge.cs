@@ -9,11 +9,11 @@
     public class Challenge : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(ChallengeConstants.ChallengeMaxTitleLength)]
+        [MaxLength(ChallengeConstants.TitleMaxLength)]
         public string Title { get; set; } = null!;
 
         [Required]
-        [MaxLength(ChallengeConstants.ChallengeMaxDescriptionLength)]
+        [MaxLength(ChallengeConstants.DescriptionMaxLength)]
         public string Description { get; set; } = null!;
 
         [Required]

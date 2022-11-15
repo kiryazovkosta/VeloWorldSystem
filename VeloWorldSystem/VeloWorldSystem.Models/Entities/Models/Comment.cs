@@ -9,7 +9,7 @@
     public class Comment : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(CommentConstants.CommentMaxContentLength)]
+        [MaxLength(CommentConstants.ContentMaxLength)]
         public string Content { get; set; } = null!;
 
         [Required]

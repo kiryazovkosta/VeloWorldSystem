@@ -8,7 +8,7 @@
     public class Image : BaseDeletableEntity<int>
     {
         [Required]
-        [MaxLength(ImageConstants.ImageMaxUrlLength)]
+        [MaxLength(ImageConstants.UrlMaxLength)]
         public string Url { get; set; } = null!;
 
         [ForeignKey(nameof(Activity))]

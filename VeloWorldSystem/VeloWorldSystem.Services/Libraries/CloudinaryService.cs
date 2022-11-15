@@ -1,19 +1,13 @@
 ﻿using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using VeloWorldSystem.Common.Constants;
 using VeloWorldSystem.Services.Libraries.Contracts;
 
 namespace VeloWorldSystem.Services.Libraries
 {
     public class CloudinaryService : ICloudinaryService
     {
-        private const string DefaultImage = "https://res.cloudinary.com/dzivpr6fj/image/upload/v1586495920/ClubestPics/default-profile-picture-clipart-8_mwungz.jpg";
-
         private readonly Cloudinary cloudinary;
 
         public CloudinaryService(Cloudinary cloudinary)
@@ -25,7 +19,7 @@ namespace VeloWorldSystem.Services.Libraries
         {
             if (file == null || this.IsFileValid(file) == false)
             {
-                return DefaultImage;
+                return GlobalConstants.Images.DefaultAvatarImage;
             }
 
             string url = " ";
@@ -78,7 +72,7 @@ namespace VeloWorldSystem.Services.Libraries
 
             string[] validTypes = new string[]
             {
-                "image/x-png", "image/gif", "image/jpeg", "image/jpg", "image/png", "image/gif", "image/svg", "video/x-msvideo", "video/mp4",
+                "image/x-png", "image/gif", "image/jpeg", "image/jpg", "image/png", "image/gif",
             };
 
             if (validTypes.Contains(photoFile.ContentType) == false)

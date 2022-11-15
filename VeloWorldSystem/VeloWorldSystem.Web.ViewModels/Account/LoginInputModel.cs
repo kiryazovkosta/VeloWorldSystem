@@ -1,12 +1,12 @@
 ﻿namespace VeloWorldSystem.DtoModels.Account
 {
     using System.ComponentModel.DataAnnotations;
+    using VeloWorldSystem.Common.Constants;
 
     public class LoginInputModel
     {
         [Required]
-        [EmailAddress]
-        public string Email { get; set; } = null!;
+        public string UserName { get; set; } = null!;
 
 
         [Required]
@@ -14,7 +14,7 @@
         public string Password { get; set; } = null!;
 
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = GlobalConstants.LoginUserModel.Remember)]
         public bool RememberMe { get; set; }
     }
 }
