@@ -90,6 +90,8 @@
             // Entities
             builder.Services.AddScoped<IUsersService, UsersService>();
             builder.Services.AddScoped<IBikeTypeService, BikeTypeService>();
+            builder.Services.AddScoped<IBikesService, BikesService>();
+
             return builder;
         }
     }

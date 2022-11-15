@@ -16,7 +16,10 @@ function closeModal(event) {
     const id = document.getElementById('selectedId').value;
     const action = event.target.id === 'confirmDelete' ? 'Delete' : 'Undelete';
     const dialog = event.target.id === 'confirmDelete' ? $("#deleteModal") : $("#undeleteModal");
-    const url = `/${area}/${controller}/${action}/${id}`;
+    let url = `/${controller}/${action}/${id}`;
+    if (area !== undefined && area !== "") {
+        url = `/${area}${url}`
+    }
     console.log(url);
 
     $.ajax({

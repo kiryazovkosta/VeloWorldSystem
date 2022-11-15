@@ -1,0 +1,21 @@
+﻿@model BikeViewModel
+
+<div class="col-md-3">
+    <div class="card mb-3">
+        <div class="card-body text-center">
+            <h4>@Model.Name</h4>
+            <h6>Type: <b>@Model.BikeType</b></h6>
+            <h6>
+                Weight:
+                <b>@String.Format("{0:f2}", Model.Weight) Kg.</b>
+            </h6>
+            <h6>Brand: <b>@Model.Brand</b></h6>
+            <h6>Model: <b>@Model.Model</b></h6>
+            <h6>Notes: <b>@Model?.Notes</b></h6>
+            <br />
+
+            <a asp-controller="Bikes" asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Edit</a>
+            <a asp-controller="Bikes" asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal" onclick="setId(@Model?.Id)">Delete</a>
+        </div>
+    </div>
+</div>

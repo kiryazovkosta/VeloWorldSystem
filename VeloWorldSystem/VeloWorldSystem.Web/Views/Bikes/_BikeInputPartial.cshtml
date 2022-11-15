@@ -1,0 +1,50 @@
+﻿@model BikeInputModel
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form method="post">
+
+            <input asp-for="UserId" type="hidden" />
+
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" placeholder="Name...">
+                <span asp-validation-for="Name" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand"></label>
+                <input asp-for="Brand" class="form-control" placeholder="Brand...">
+                <span asp-validation-for="Brand" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model"></label>
+                <input asp-for="Model" class="form-control">
+                <span asp-validation-for="Model" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Weight"></label>
+                <input asp-for="Weight" class="form-control" placeholder="Weiight of the bike...">
+                <span asp-validation-for="Weight" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Notes"></label>
+                <textarea asp-for="Notes" rows="4" class="form-control" placeholder="Notes..."></textarea>
+                <span asp-validation-for="Notes" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BikeTypeId"></label>
+                <select asp-for="BikeTypeId" class="form-select">
+                    @foreach (var bikeType in Model.BikeTypes)
+                    {
+                        <option value="@bikeType.Id">@bikeType.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="BikeTypeId" class="small text-danger"></span>
+            </div>
+
+            <div class="text-center">
+                <input class="btn btn-primary mt-3" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>

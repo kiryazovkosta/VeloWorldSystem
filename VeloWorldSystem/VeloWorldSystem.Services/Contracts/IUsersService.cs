@@ -12,6 +12,10 @@ namespace VeloWorldSystem.Services.Contracts
     {
         Task<bool> IsUsernameExistsAsync(string username);
 
+        Task<bool> IsUserExistsAsync(string userId);
+
         Task<ApplicationUser> CreateUser(RegisterInputModel model);
+
+
     }
 }

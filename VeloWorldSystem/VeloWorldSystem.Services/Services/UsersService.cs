@@ -46,6 +46,11 @@
             return user;
         }
 
+        public async Task<bool> IsUserExistsAsync(string userId)
+        {
+            return await this.users.AllAsNoTracking().AnyAsync(u => u.Id == userId);
+        }
+
         public async Task<bool> IsUsernameExistsAsync(string username)
         {
             return await this.users.AllAsNoTracking().AnyAsync(u => u.UserName == username);

@@ -17,10 +17,10 @@
             public const double WeightMinValue = 0.00;
 
             public const int BrandMaxLength = 50;
-            public const int BrandMinLength = 5;
+            public const int BrandMinLength = 2;
 
             public const int ModelMaxLength = 50;
-            public const int ModelMinLength = 5;
+            public const int ModelMinLength = 2;
 
             public const int NotesMaxLength = 255;
         }
@@ -97,6 +97,7 @@
             public const string MemberRole = "Member";
             public const string SuperMemberRole = "SuperMember";
             public const string AdminRole = "Administrator";
+            public const string UsersOnly = MemberRole + "," + SuperMemberRole;
         }
     }
 }

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BikeViewModel>
+
+@{
+    ViewBag.Title = "All Bikes";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+@await Html.PartialAsync("_ConfirmDialogs")
+
+<a asp-controller="Bikes" asp-action="Create" class="btn btn-primary">Create</a>
+<hr />
+
+@if (!Model.Any())
+{
+    <h2 class="text-center">No houses found by the given criteria!</h2>
+}
+
+<div class="row">
+    @foreach (var bike in Model)
+    {
+        <partial name="_BikeViewPartial" model="@bike" />
+    }
+</div>
+
+@section Scripts {
+    <script src="~/js/custom/confirm.js" asp-append-version="true"></script>
+}
