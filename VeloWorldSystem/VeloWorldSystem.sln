@@ -34,6 +34,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.GpxProcessi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeloWorldSystem.Infrastructure", "VeloWorldSystem.Infrastructure\VeloWorldSystem.Infrastructure.csproj", "{C973CF9D-E890-4430-B4B2-28EE06B594B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeloWorldSystem.Services.Tests", "VeloWorldSystem.Services.Tests\VeloWorldSystem.Services.Tests.csproj", "{E33BE756-53BE-4A84-86D5-28ACE184504C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +78,10 @@ Global
 		{C973CF9D-E890-4430-B4B2-28EE06B594B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C973CF9D-E890-4430-B4B2-28EE06B594B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C973CF9D-E890-4430-B4B2-28EE06B594B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E33BE756-53BE-4A84-86D5-28ACE184504C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E33BE756-53BE-4A84-86D5-28ACE184504C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E33BE756-53BE-4A84-86D5-28ACE184504C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E33BE756-53BE-4A84-86D5-28ACE184504C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{4A1B1076-6071-4985-A861-8BDAEBE9553E} = {13E67952-627B-474B-B245-7CE32A80C772}
 		{C106BA48-255D-4C09-AACD-EF9C4EBCCE29} = {9D44CDA9-532D-4F6A-A7BA-B84FDCAF6552}
 		{C973CF9D-E890-4430-B4B2-28EE06B594B1} = {13E67952-627B-474B-B245-7CE32A80C772}
+		{E33BE756-53BE-4A84-86D5-28ACE184504C} = {6B91A7FB-6E9B-4C4E-9BE3-5036878CCA1B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89DB1A6D-F1C6-467D-B9BF-71675C538561}

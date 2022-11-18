@@ -36,7 +36,7 @@
         [HttpPost]
         public async Task<IActionResult> Create(BikeInputModel bikeModel)
         {
-            if (!await this.bikeTypeService.Exists(bikeModel.BikeTypeId))
+            if (!await this.bikeTypeService.ExistsAsync(bikeModel.BikeTypeId))
             {
                 this.ModelState.AddModelError(nameof(bikeModel.BikeTypeId), "Bike type does not exists.");
             }
@@ -59,7 +59,7 @@
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            if (!await this.bikesService.Exists(id))
+            if (!await this.bikesService.ExistsAsync(id))
             {
                 return BadRequest();
             }
@@ -77,7 +77,7 @@
         [HttpPost]
         public async Task<IActionResult> Edit(int id, BikeInputModel bikeModel)
         {
-            if (!await this.bikesService.Exists(id))
+            if (!await this.bikesService.ExistsAsync(id))
             {
                 return NotFound();
             }
@@ -87,7 +87,7 @@
                 return Unauthorized();
             }
 
-            if (!await this.bikeTypeService.Exists(bikeModel.BikeTypeId))
+            if (!await this.bikeTypeService.ExistsAsync(bikeModel.BikeTypeId))
             {
                 this.ModelState.AddModelError(nameof(bikeModel.BikeTypeId), "Bike type does not exists.");
             }
@@ -105,7 +105,7 @@
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            if (!await this.bikesService.Exists(id))
+            if (!await this.bikesService.ExistsAsync(id))
             {
                 return NotFound();
             }

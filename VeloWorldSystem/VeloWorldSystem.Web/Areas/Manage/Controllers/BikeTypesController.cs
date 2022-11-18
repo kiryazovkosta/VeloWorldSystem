@@ -66,7 +66,7 @@
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            if (!await this.bikeTypeService.Exists(id))
+            if (!await this.bikeTypeService.ExistsAsync(id))
             {
                 return NotFound();
             }

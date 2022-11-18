@@ -14,7 +14,7 @@ namespace VeloWorldSystem.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<ApplicationRole> builder)
         {
-            builder.HasData(GetApplicationRoles());
+            //builder.HasData(GetApplicationRoles());
         }
 
         private IEnumerable<ApplicationRole> GetApplicationRoles()

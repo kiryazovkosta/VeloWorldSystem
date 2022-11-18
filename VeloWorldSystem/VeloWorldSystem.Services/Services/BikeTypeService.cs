@@ -1,6 +1,7 @@
 ﻿namespace VeloWorldSystem.Services.Services
 {
     using Microsoft.EntityFrameworkCore;
+    using VeloWorldSystem.Common.Exceptions;
     using VeloWorldSystem.Data.Contracts;
     using VeloWorldSystem.DtoModels.BikeTypes;
     using VeloWorldSystem.Mapping;
@@ -13,20 +14,25 @@
 
         public BikeTypeService(IDeletableRepository<BikeType> bikeTypes)
         {
-            this.bikeTypesRepo = bikeTypes ?? throw new ArgumentNullException(nameof(BikeType));
+            this.bikeTypesRepo = bikeTypes ?? throw new ArgumentNullException(nameof(bikeTypes));
         }
 
-        public async Task<bool> Exists(int id)
+        public async Task<bool> ExistsAsync(int id)
         {
             return await this.bikeTypesRepo.AllAsNoTracking().AnyAsync(bt => bt.Id == id);
         }
 
         public async Task<T> GetByIdAsync<T>(int id)
         {
-            var bikeType = (await this.bikeTypesRepo.All().FirstOrDefaultAsync(bt => bt.Id == id));
-            return bikeType.To<T>();
-        }
+            var bikeType = await this.bikeTypesRepo.All().FirstOrDefaultAsync(bt => bt.Id == id);
+            if (bikeType == null)
+            {
+                throw new NotFoundException(nameof(BikeType), id);
+            }
 
+            return bikeType.To<T>();
+
+        }
 
         public async Task<int> AddAsync(BikeTypeInputModel model)
         {

@@ -62,7 +62,7 @@
         {
             base.OnModelCreating(builder);
             this.ConfigureEntityTypes(builder);
-            this.SetUsersAndRoles(builder);
+            //this.SetUsersAndRoles(builder);
             this.ConfigureIsDeletedIndex(builder);
             this.ConfigureGlobalDisableCascadeDelete(builder);
         }

@@ -10,7 +10,7 @@ namespace VeloWorldSystem.Services.Contracts
 {
     public interface IBikesService
     {
-        Task<bool> Exists(int id);
+        Task<bool> ExistsAsync(int id);
 
         Task<bool> IsOwner(int id, string userId);
 

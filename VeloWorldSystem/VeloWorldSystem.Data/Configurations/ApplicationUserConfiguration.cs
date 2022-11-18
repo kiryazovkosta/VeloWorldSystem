@@ -34,7 +34,7 @@
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasData(GetApplicationUsers());
+            //builder.HasData(GetApplicationUsers());
         }
 
         private IEnumerable<ApplicationUser> GetApplicationUsers()

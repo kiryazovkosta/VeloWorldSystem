@@ -10,7 +10,7 @@ namespace VeloWorldSystem.Services.Contracts
 {
     public interface IBikeTypeService
     {
-        Task<bool> Exists(int id);
+        Task<bool> ExistsAsync(int id);
 
         Task<T> GetByIdAsync<T>(int id);
 

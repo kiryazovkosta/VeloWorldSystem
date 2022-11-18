@@ -8,7 +8,7 @@ namespace VeloWorldSystem.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<BikeType> builder)
         {
-            builder.HasData(SeedBikeTypes());
+            //builder.HasData(SeedBikeTypes());
         }
 
         private IEnumerable<BikeType> SeedBikeTypes()
