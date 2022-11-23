@@ -13,6 +13,6 @@ namespace VeloWorldSystem.Services.Libraries.Contracts
 
         Task<string> UploudAsync(IFormFile file);
 
-        Task<string> UploudAsync(byte[] file);
+        Task<string> UploudArrayAsync(byte[] file);
     }
 }

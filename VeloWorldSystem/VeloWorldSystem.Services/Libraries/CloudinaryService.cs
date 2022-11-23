@@ -1,25 +1,27 @@
-﻿using CloudinaryDotNet;
-using CloudinaryDotNet.Actions;
-using Microsoft.AspNetCore.Http;
-using VeloWorldSystem.Common.Constants;
-using VeloWorldSystem.Services.Libraries.Contracts;
-
-namespace VeloWorldSystem.Services.Libraries
+﻿namespace VeloWorldSystem.Services.Libraries
 {
+    using CloudinaryDotNet;
+    using CloudinaryDotNet.Actions;
+    using Microsoft.AspNetCore.Http;
+    using VeloWorldSystem.Common.Exceptions;
+    using VeloWorldSystem.Services.Libraries.Contracts;
+    using static VeloWorldSystem.Common.Constants.DataConstants;
+    using static VeloWorldSystem.Common.Constants.GlobalErrorMessages;
+
     public class CloudinaryService : ICloudinaryService
     {
         private readonly Cloudinary cloudinary;
 
         public CloudinaryService(Cloudinary cloudinary)
         {
-            this.cloudinary = cloudinary;
+            this.cloudinary = cloudinary ?? throw new ArgumentNullException(nameof(Cloudinary));
         }
 
         public async Task<string> UploudAsync(IFormFile file)
         {
             if (file == null || this.IsFileValid(file) == false)
             {
-                return GlobalConstants.Images.DefaultAvatarImage;
+                throw new CloudinaryUploadException(CloudinaryErrors.ExceptionMessage);
             }
 
             string url = " ";
@@ -44,8 +46,13 @@ namespace VeloWorldSystem.Services.Libraries
             return url;
         }
 
-        public async Task<string> UploudAsync(byte[] file)
+        public async Task<string> UploudArrayAsync(byte[] file)
         {
+            if (file == null || file.Length == 0)
+            {
+                throw new CloudinaryUploadException(CloudinaryErrors.ExceptionMessage);
+            }
+
             byte[] imageBytes = file;
             string url = " ";
 
@@ -67,15 +74,10 @@ namespace VeloWorldSystem.Services.Libraries
         {
             if (photoFile == null)
             {
-                return true;
+                return false;
             }
 
-            string[] validTypes = new string[]
-            {
-                "image/x-png", "image/gif", "image/jpeg", "image/jpg", "image/png", "image/gif",
-            };
-
-            if (validTypes.Contains(photoFile.ContentType) == false)
+            if (CloudinaryConstants.ValidImagesTypes.Contains(photoFile.ContentType) == false)
             {
                 return false;
             }

@@ -1,4 +1,6 @@
-﻿namespace VeloWorldSystem.Common.Constants
+﻿using System.Collections.Immutable;
+
+namespace VeloWorldSystem.Common.Constants
 {
     public static class DataConstants
     {
@@ -98,6 +100,12 @@
             public const string SuperMemberRole = "SuperMember";
             public const string AdminRole = "Administrator";
             public const string UsersOnly = MemberRole + "," + SuperMemberRole;
+        }
+
+        public class CloudinaryConstants 
+        {
+            public static IReadOnlyList<string> ValidImagesTypes 
+                => new string[] { "image/x-png", "image/gif", "image/jpeg", "image/jpg", "image/png", "image/gif" };
         }
     }
 }
